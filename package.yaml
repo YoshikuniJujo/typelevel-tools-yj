@@ -1,6 +1,6 @@
 name:                typelevel-tools-yj
 version:             0.1.0.6
-github:              "YoshikuniJujo/typelevel-tools"
+github:              "YoshikuniJujo/typelevel-tools-yj"
 license:             BSD3
 author:              "Yoshikuni Jujo"
 maintainer:          "yoshikuni.jujo@gmail.com"
