@@ -9,7 +9,9 @@
 
 module Data.TypeLevel.List (
 	Length(..), IsPrefixOf, InfixIndex(..),
-	module Data.TypeLevel.List.Unzip
+	module Data.TypeLevel.List.Unzip,
+
+	Append
 	) where
 
 import Prelude hiding (length, unzip)
@@ -32,3 +34,7 @@ instance (x ': xs) `IsPrefixOf` (x ': ys) =>
 
 instance {-# OVERLAPPABLE #-} InfixIndex xs ys => InfixIndex xs (y ': ys) where
 	infixIndex = infixIndex @_ @xs @ys + 1
+
+type family Append xs ys where
+	'[] `Append` ys = ys
+	(x ': xs) `Append` ys = x ': (xs `Append` ys)
